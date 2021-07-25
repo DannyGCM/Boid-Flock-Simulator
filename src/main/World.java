@@ -32,7 +32,16 @@ public class World {
 	private double sightDiameter = 300;
 
 	// Boid movement speed
-	private double speed = 10;
+	private double speed = 8;
+	
+	// Speed control for first rule
+	private double collisionAvoidanceSpeed = 5;
+	
+	// Speed control for second rule
+	private double directionAlignmentSpeed = 2;
+	
+	// Speed control for third rule
+	private double flockCenteringSpeed = 4;
 
 	// Getters
 	public boolean getCollisionAvoidance() { return collisionAvoidance; }
@@ -54,6 +63,12 @@ public class World {
 	public double getSightDiameter() { return sightDiameter; }
 
 	public double getSpeed() { return speed; }
+
+	public double getCollisionAvoidanceSpeed() { return collisionAvoidanceSpeed; }
+
+	public double getDirectionAlignmentSpeed() { return directionAlignmentSpeed; }
+
+	public double getFlockCenteringSpeed() { return flockCenteringSpeed; }
 
 	// Setters
 	public void setCollisionAvoidance(boolean collisionAvoidance) {
@@ -90,5 +105,17 @@ public class World {
 
 	public void setSpeed(double speed) {
 		this.speed = speed;
+	}
+	
+	public void setCollisionAvoidanceSpeed(double collisionAvoidanceSpeed) {
+		this.collisionAvoidanceSpeed = collisionAvoidanceSpeed;
+	}
+
+	public void setDirectionAlignmentSpeed(double directionAlignmentSpeed) {
+		this.directionAlignmentSpeed = directionAlignmentSpeed;
+	}
+
+	public void setFlockCenteringSpeed(double flockCenteringSpeed) {
+		this.flockCenteringSpeed = flockCenteringSpeed;
 	}
 }

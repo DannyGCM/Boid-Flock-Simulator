@@ -29,7 +29,7 @@ public class Panel extends JPanel implements ActionListener{
 	// Shared variables
 	private ArrayList<Boid> boids = new ArrayList<>();
 	private Checkbox[] checkboxes = new Checkbox[6];
-	private Scrollbar[] sliders = new Scrollbar[3];
+	private Scrollbar[] sliders = new Scrollbar[6];
 	private World world = new World();
 	private Timer timer;
 
@@ -72,18 +72,33 @@ public class Panel extends JPanel implements ActionListener{
         // Generates sliders
  		Scrollbar tempSlider = new Scrollbar(Scrollbar.HORIZONTAL,
  		(int) this.world.getSightDegrees(), 1, 1, 361);
- 		tempSlider.setBounds(1210, 393, 325, 15);
+ 		tempSlider.setBounds(1180, 393, 355, 15);
         this.sliders[0] = tempSlider;
 
         tempSlider = new Scrollbar(Scrollbar.HORIZONTAL,
         (int) this.world.getSightDiameter(), 1, 1, 501);
-        tempSlider.setBounds(1210, 473, 325, 15);
+        tempSlider.setBounds(1180, 473, 355, 15);
         this.sliders[1] = tempSlider;
 
         tempSlider = new Scrollbar(Scrollbar.HORIZONTAL,
-        (int) this.world.getSpeed(), 1, 1, 11);
-        tempSlider.setBounds(1210, 553, 325, 15);
+        (int) this.world.getSpeed(), 1, 1, 16);
+        tempSlider.setBounds(1180, 553, 355, 15);
         this.sliders[2] = tempSlider;
+
+        tempSlider = new Scrollbar(Scrollbar.HORIZONTAL,
+ 		(int) this.world.getCollisionAvoidanceSpeed(), 1, 1, 11);
+ 		tempSlider.setBounds(1180, 633, 355, 15);
+        this.sliders[3] = tempSlider;
+
+        tempSlider = new Scrollbar(Scrollbar.HORIZONTAL,
+        (int) this.world.getDirectionAlignmentSpeed(), 1, 1, 11);
+        tempSlider.setBounds(1180, 713, 355, 15);
+        this.sliders[4] = tempSlider;
+
+        tempSlider = new Scrollbar(Scrollbar.HORIZONTAL,
+        (int) this.world.getFlockCenteringSpeed(), 1, 1, 11);
+        tempSlider.setBounds(1180, 793, 355, 15);
+        this.sliders[5] = tempSlider;
 
 		// Sets window size
 		this.setPreferredSize(new Dimension(1600, 900));
@@ -109,12 +124,10 @@ public class Panel extends JPanel implements ActionListener{
 		this.setLayout(null);
 
 		// Adds all checkboxes
-		for (Checkbox element : this.checkboxes) {
-			this.add(element); }
+		for (Checkbox element : this.checkboxes) { this.add(element); }
 
 		// Adds all sliders
-		for (Scrollbar slider : this.sliders) {
-			this.add(slider); }
+		for (Scrollbar slider : this.sliders) { this.add(slider); }
 
 		// Creates handlers
 		this.logicHandler = new LogicHandler(this.boids,

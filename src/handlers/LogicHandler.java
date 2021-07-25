@@ -85,6 +85,18 @@ public class LogicHandler {
 			if (this.sliders[2].getUnitIncrement() != 0) {
 			this.world.setSpeed(this.sliders[2].getValue()); }
 
+			// Rule 1 speed
+			if (this.sliders[3].getUnitIncrement() != 0) {
+			this.world.setCollisionAvoidanceSpeed(this.sliders[3].getValue()); }
+
+			// Rule 2 speed
+			if (this.sliders[4].getUnitIncrement() != 0) {
+			this.world.setDirectionAlignmentSpeed(this.sliders[4].getValue()); }
+
+			// Rule 3 speed
+			if (this.sliders[5].getUnitIncrement() != 0) {
+			this.world.setFlockCenteringSpeed(this.sliders[5].getValue()); }
+
 		}
 
 		// Updates boid positions and vertices

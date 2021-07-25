@@ -84,7 +84,7 @@ public class Boid{
 		if (this.near != null) {
 
 			// Defines speed
-			double speed = 0.05;
+			double speed = this.world.getCollisionAvoidanceSpeed() / 100;
 			double minBuffer = 10;
 			double[] distances = new double[3];
 			double[] minimums = new double[3];
@@ -176,7 +176,7 @@ public class Boid{
 	// Boid rule - Align boid direction
 	public void directionAlignmentRule() {
 
-		double speed = 0.03;
+		double speed = this.world.getDirectionAlignmentSpeed() / 100;
 		double average = this.direction;
 
 		// Ensures there are neighbors
@@ -201,7 +201,7 @@ public class Boid{
 	// Boid rule - Attempts to move to flock center
 	public void flockCenteringRule() {
 
-		double speed = 0.03;
+		double speed = this.world.getFlockCenteringSpeed() / 100;
 		double averageX = this.x;
 		double averageY = this.y;
 

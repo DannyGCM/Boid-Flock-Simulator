@@ -138,14 +138,24 @@ public class GraphicsHandler {
 		g2D.drawString("Display proximity", 1180, 325);
 
 		g2D.drawString("Sight Degrees", 1150, 365);
-		g2D.drawString(String.format("%06.2f",
+		g2D.drawString(String.format("%03.0f",
 		this.boids.get(0).getWorld().getSightDegrees()), 1150, 405);
 		g2D.drawString("Sight Diameter", 1150, 445);
-		g2D.drawString(String.format("%06.2f",
+		g2D.drawString(String.format("%03.0f",
 		this.boids.get(0).getWorld().getSightDiameter()), 1150, 485);
 		g2D.drawString("Speed", 1150, 525);
-		g2D.drawString(String.format("%04.2f",
+		g2D.drawString(String.format("%02.0f",
 		this.boids.get(0).getWorld().getSpeed()), 1150, 565);
+		
+		g2D.drawString("Collision Avoidance Speed", 1150, 605);
+		g2D.drawString(String.format("%02.0f",
+		this.boids.get(0).getWorld().getCollisionAvoidanceSpeed()), 1150, 645);
+		g2D.drawString("Direction Alignment Speed", 1150, 685);
+		g2D.drawString(String.format("%02.0f",
+		this.boids.get(0).getWorld().getDirectionAlignmentSpeed()), 1150, 725);
+		g2D.drawString("Flock Centering Speed", 1150, 765);
+		g2D.drawString(String.format("%02.0f",
+		this.boids.get(0).getWorld().getFlockCenteringSpeed()), 1150, 805);
 
 	}
 
