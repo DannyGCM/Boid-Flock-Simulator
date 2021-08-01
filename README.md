@@ -61,35 +61,26 @@ The program has two sections. The simulation is to the left and the control pane
 </p>
 
 <h2 id="Rule 1">Rule 1: Collision Avoidance</h2>
-
-<p>
-
-</p>
-
 <h3 id="R1 Implementation">Implementation</h2>
 
 <p>
-
+Attempts to avoid other agents by minimizing the total distance between all visible boids. This is done by making three virtual copies that move differently. One is updated after a left turn, the second after a right turn and the last without turning. Whichever has the lowest total distance becomes the real boid. A consequence of this approach is that sometimes the boid will not care to avoid crashing given that the overall distance decreases. To prevent this, I added a minimum distance between boids that the agent will try to maintain as much as possible.
 </p>
 
 <h3 id="R1 Behavior">Behavior</h2>
 
 <p>
-
+Boids attempt to avoid collisions at all cost except when limited by speed, turns, or information. As a result, agents don't crash when separated from most of the flock but fail to do so when the rule's speed is suppressed or combined with rules number 2 and or 3. Removing it, however, results in unnatural behavior even when 2 and 3 are active.
 </p>
 
 <h3 id="R1 Limitations">Limitations</h2>
 
 <p>
-
+Due to static speed and rotation degrees, collisions that should be easily avoided aren't at times. This should be fixed by adding a speed modifier and variable rotation speed. Additionally, due to screen wrapping, boids are sometimes stuck being pushed in and out of bounds due to the boid's vision teleportation. This was somewhat fixed by warping boids a few pixels away from the margins. An additional solution could be to make boids automatically steer away from walls.<br><br>
+[Insert Image]
 </p>
 
 <h2 id="Rule 2">Rule 2: Direction Alignment</h2>
-
-<p>
-
-</p>
-
 <h3 id="R2 Implementation">Implementation</h2>
 
 <p>
@@ -109,11 +100,6 @@ The program has two sections. The simulation is to the left and the control pane
 </p>
 
 <h2 id="Rule 3">Rule 3: Flock Centering</h2>
-
-<p>
-
-</p>
-
 <h3 id="R3 Implementation">Implementation</h2>
 
 <p>
