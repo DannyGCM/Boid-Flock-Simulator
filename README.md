@@ -84,19 +84,20 @@ Due to static speed and rotation degrees, collisions that should be easily avoid
 <h3 id="R2 Implementation">Implementation</h2>
 
 <p>
-
+Moves agents in the direction visible boids are heading. This is done by computing the average direction of all boids and steering the agent in that direction. If left will more effectively get us to the average, then we steer left. If a right does it instead, we steer right. Finally, if we happen to be heading in the average direction (or there are no nearby boids) we continue straight.
 </p>
 
 <h3 id="R2 Behavior">Behavior</h2>
 
 <p>
-
+Agents attempt to move in the same direction as nearby boids dampening the other rule's behavior. We can see its effect by activating rules 1 and 2 simultaneously, which results in the boids spreading out and moving in the same direction (a much less chaotic behavior than when we only had rule 1 activated).<br><br>
+[Insert Image]
 </p>
 
 <h3 id="R2 Limitations">Limitations</h2>
 
 <p>
-
+If the speed is too high the turn might overshoot resulting in a wiggle motion. This effect is not seen when the other two rules are active.
 </p>
 
 <h2 id="Rule 3">Rule 3: Flock Centering</h2>
