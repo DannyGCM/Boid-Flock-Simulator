@@ -104,11 +104,11 @@ If the speed is too high the turn might overshoot resulting in a wiggle motion. 
 <h3 id="R3 Implementation">Implementation</h2>
 
 <p>
-
+Moves agents as close as possible to the boid's center of 'mass'. This is done by computing the average location of all visible agents and steering in a way that shortens the distance to it. If left will more effectively get us to the center, then we turn left. If a right does it instead, we turn right. Finally, if we happen to be heading in the average direction (or there are no nearby boids) we continue straight.
 </p>
 
 <h3 id="R3 Behavior">Behavior</h2>
-
+Agents try to fly in swirls (or circles if the strength is high) giving the movement a natural feel. By activating this rule, boids move around a lot more, changing their directions rapidly, a behavior not observed when only applying the first two rules.
 <p>
 
 </p>
@@ -116,7 +116,8 @@ If the speed is too high the turn might overshoot resulting in a wiggle motion. 
 <h3 id="R3 Limitations">Limitations</h2>
 
 <p>
-
+If the strength is too high, the boids will form circle formations and never move elsewhere. Additionally, this rule tends to make boids pack together when combined with rule number 2, something that contradicts the first rule's purpose. To limit this behavior, consider toning down its strength.<br><br>
+[Insert Image]
 </p>
 
 <h2 id="Conclusion">Conclusion</h2>
