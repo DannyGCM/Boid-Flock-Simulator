@@ -37,7 +37,7 @@ This program offers a real-time simulation of an algorithm modeled after Craig R
   <li>Head to the center of 'mass'</li>
 </ol>
 To make the implementation of said rules possible, each boid was given variables determining the degrees and length of sight. This way their awareness is not universal and therefore uniform. Furthermore, the strength of each rule can be tweaked to achieve different group behaviors more appropriate for different scenarios. While this algorithm isn't plug-and-play, the approach to the rule's implementation can easily be mimicked in a myriad of applications. If the program is correctly executed it should look as follows:<br><br>
-[Insert Image]
+<img src="https://user-images.githubusercontent.com/44539767/128527333-cdc835ef-cb5f-4e16-a88d-1ee9f52d80d7.png" alt="Simply Easy Learning">
 </p>
 
 <h2 id="Controls">Controls</h2>
@@ -77,7 +77,7 @@ Boids attempt to avoid collisions at all cost except when limited by speed, turn
 
 <p>
 Due to static speed and rotation degrees, collisions that should be easily avoided aren't at times. This should be fixed by adding a speed modifier and variable rotation speed. Additionally, due to screen wrapping, boids are sometimes stuck being pushed in and out of bounds due to the boid's vision teleportation. This was somewhat fixed by warping boids a few pixels away from the margins. An additional solution could be to make boids automatically steer away from walls.<br><br>
-[Insert Image]
+<img src="https://user-images.githubusercontent.com/44539767/128528045-1aff5718-53f7-4b3b-91ec-fb42607d2177.png" alt="Simply Easy Learning">
 </p>
 
 <h2 id="Rule 2">Rule 2: Direction Alignment</h2>
@@ -91,7 +91,7 @@ Moves agents in the direction visible boids are heading. This is done by computi
 
 <p>
 Agents attempt to move in the same direction as nearby boids dampening the other rule's behavior. We can see its effect by activating rules 1 and 2 simultaneously, which results in the boids spreading out and moving in the same direction (a much less chaotic behavior than when we only had rule 1 activated).<br><br>
-[Insert Image]
+<img src="https://user-images.githubusercontent.com/44539767/128528323-b9af9d53-dcd2-4494-b685-ea7ed49338ba.png" alt="Simply Easy Learning">
 </p>
 
 <h3 id="R2 Limitations">Limitations</h2>
@@ -117,7 +117,7 @@ Agents try to fly in swirls (or circles if the strength is high) giving the move
 
 <p>
 If the strength is too high, the boids will form circle formations and never move elsewhere. Additionally, this rule tends to make boids pack together when combined with rule number 2, something that contradicts the first rule's purpose. To limit this behavior, consider toning down its strength.<br><br>
-[Insert Image]
+<img src="https://user-images.githubusercontent.com/44539767/128528522-8c422fa1-19d7-4212-b91e-2147e84eb163.png" alt="Simply Easy Learning">
 </p>
 
 <h2 id="Conclusion">Conclusion</h2>
